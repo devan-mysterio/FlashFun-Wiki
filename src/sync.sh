@@ -1,10 +1,13 @@
 #!/bin/bash
 
+echo "Deleting .git folder..."
+rm -rf .git
+
 echo "Creating staging directory..."
 mkdir -p /tmp/wiki-staging
 
 echo "Copying all wiki pages flat into staging..."
-find FlashFun-Wiki -name "*.md" -exec cp {} /tmp/wiki-staging/ \;
+find . -name "*.md" -exec cp {} /tmp/wiki-staging/ \;
 
 echo "Setting up temporary repository..."
 cd /tmp/wiki-staging

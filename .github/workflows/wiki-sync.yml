@@ -1,0 +1,21 @@
+name: Wiki Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    name: Synchronize Wiki
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync to GitHub Wiki
+        run: sh src/sync.sh
+        env:
+          ACCESS_TOKEN: ${{ secrets.WIKI_ACCESS_TOKEN }}
+          LOGIN_EMAIL: ${{ secrets.WIKI_LOGIN_EMAIL }}
