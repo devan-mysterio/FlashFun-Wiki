@@ -14,7 +14,7 @@ cd /tmp/wiki-staging
 git init
 
 echo "Setting up authentication..."
-git config user.name "WikiSyncBot"
+git config user.name "Castor"
 git config user.email ${LOGIN_EMAIL}
 
 echo "Committing changes..."
